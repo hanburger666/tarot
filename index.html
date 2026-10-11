@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111026">
+  <title>星谕 · 塔罗手记</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap');
+    :root{--bg:#0e0d20;--panel:#1b1935;--panel2:#24213f;--line:#66598188;--gold:#e7c98d;--cream:#f8efdc;--muted:#aaa3b9;--rose:#dbaebc;--violet:#aaa0e1;--shadow:0 22px 70px #05030c99}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--cream);background:radial-gradient(circle at 50% -15%,#493764 0,#1b1837 30%,#0e0d20 74%);font-family:'Noto Sans SC',system-ui,sans-serif;min-height:100vh}body:before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.17;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:59px 73px;mask-image:linear-gradient(#000,transparent 90%)}button,input,textarea{font:inherit}button{cursor:pointer}button:disabled{opacity:.42;cursor:not-allowed}a{color:var(--gold)}.serif{font-family:'Noto Serif SC',serif}.app{max-width:1260px;margin:auto;padding:0 28px 70px;position:relative}.top{height:83px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #c8ac7140}.brand{display:flex;align-items:center;gap:12px;font:600 24px 'Noto Serif SC',serif;letter-spacing:.17em}.brand-mark{display:grid;place-items:center;width:39px;height:39px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font-size:22px}.nav{display:flex;gap:8px;align-items:center}.nav button,.ghost{border:1px solid transparent;background:none;color:var(--muted);padding:10px 16px;border-radius:30px}.nav button:hover,.nav button.active{color:var(--cream);border-color:#bca26e66;background:#ddbd8722}.nav .settings{font-size:20px;padding:6px 12px}.hero{text-align:center;padding:62px 12px 34px}.eyebrow{color:var(--gold);letter-spacing:.38em;font-size:11px;text-transform:uppercase}.hero h1{font:500 clamp(34px,5.5vw,64px) 'Noto Serif SC',serif;letter-spacing:.1em;margin:13px 0 10px;text-shadow:0 0 38px #e9c89a54}.hero p{color:var(--muted);margin:0;line-height:1.9}.hero-symbol{font-size:42px;color:var(--gold);margin-bottom:7px}.section{max-width:1060px;margin:0 auto}.stephead{display:flex;align-items:center;gap:16px;margin:35px 0 20px}.stepnum{border:1px solid var(--gold);color:var(--gold);border-radius:50%;width:28px;height:28px;display:grid;place-items:center;font:15px Georgia}.stephead h2{font:500 22px 'Noto Serif SC';margin:0}.stephead span:last-child{color:var(--muted);font-size:13px;margin-left:auto}.panel{background:linear-gradient(145deg,#26213eeb,#18162feb);border:1px solid #a28b6959;border-radius:22px;box-shadow:var(--shadow)}.topic-panel{padding:28px;text-align:center}.topic-sub{color:var(--muted);font-size:13px}.chips{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:24px auto;max-width:780px}.chip{border:1px solid #9c8d986e;background:#ffffff08;color:var(--cream);border-radius:50px;padding:11px 24px;min-width:95px;transition:.2s}.chip:hover,.chip.selected{border-color:var(--gold);background:#e3c58229;transform:translateY(-2px)}.text-btn{border:0;background:transparent;color:var(--gold);text-decoration:underline;text-underline-offset:5px;padding:8px}.spreads{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.spread{padding:24px 20px;text-align:left;color:var(--cream);transition:.2s}.spread:hover,.spread.selected{border-color:var(--gold);transform:translateY(-3px);background:linear-gradient(145deg,#332a49,#201b37)}.spread-icon{height:65px;color:var(--gold);display:flex;align-items:center;gap:4px}.tinycard{width:28px;height:46px;border:1px solid #c5a976;border-radius:4px;display:grid;place-items:center;font-size:16px;box-shadow:inset 0 0 0 2px #27213c,inset 0 0 0 3px #bda36f}.spread h3{font:500 20px 'Noto Serif SC';margin:3px 0 9px}.spread p{color:var(--muted);font-size:13px;line-height:1.65;margin:0}.spread .labels{margin-top:15px;color:var(--gold);font-size:11px;letter-spacing:.07em}.actions{text-align:center;margin:30px 0 48px}.primary{border:1px solid #f4d99d;background:linear-gradient(110deg,#b99864,#e3c58e,#aa8657);color:#241a2b;border-radius:50px;padding:13px 38px;font-weight:600;letter-spacing:.15em;box-shadow:0 6px 30px #e8bd7c34;transition:.2s}.primary:hover:not(:disabled){transform:translateY(-2px);filter:brightness(1.1)}.secondary{border:1px solid #c9ac7680;background:#c9ac7618;color:var(--gold);border-radius:50px;padding:11px 23px}.secondary:hover{background:#c9ac7630}.center{text-align:center}.hidden{display:none!important}.draw-panel{padding:25px 24px 32px;text-align:center}.draw-panel h2{font:500 25px 'Noto Serif SC';margin:4px}.draw-panel p{color:var(--muted);font-size:13px}.progress{color:var(--gold);margin:15px 0}.deck{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;max-width:710px;margin:25px auto}.pick-card{width:63px;height:100px;border-radius:8px;background:radial-gradient(circle,#6f567a 0,#382d54 45%,#221d3f 100%);border:2px solid #bda471;box-shadow:inset 0 0 0 4px #2b2549,inset 0 0 0 5px #a98c62,0 7px 18px #0008;color:var(--gold);font:32px Georgia;transition:.2s;position:relative}.pick-card:before{content:'✦';position:absolute;font-size:10px;top:8px;left:8px}.pick-card:after{content:'✦';position:absolute;font-size:10px;bottom:8px;right:8px}.pick-card:hover:not(:disabled){transform:translateY(-17px) rotate(-2deg);box-shadow:0 18px 30px #e7c98d42}.picked{opacity:.2;transform:translateY(15px)}.selected-row{display:flex;justify-content:center;flex-wrap:wrap;gap:22px;margin:25px 0}.result-card{width:190px;text-align:center}.card-art{height:285px;border-radius:12px;border:2px solid #d6b778;background:radial-gradient(circle at 50% 36%,#76618b55,transparent 55%),linear-gradient(150deg,#252345,#13152c);box-shadow:inset 0 0 0 5px #1d1b34,inset 0 0 0 6px #a58d6a,0 14px 26px #0008;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:24px 12px;color:var(--gold);position:relative;overflow:hidden}.card-art:before{content:'';position:absolute;width:125px;height:125px;border:1px solid #e3c89566;border-radius:50%;top:66px;box-shadow:0 0 0 16px #e3c89513,0 0 0 32px #e3c8950b}.card-art.reversed .card-glyph{transform:rotate(180deg)}.card-top{font:12px Georgia;letter-spacing:.25em;z-index:1}.card-glyph{font:80px Georgia;line-height:1;z-index:1;text-shadow:0 0 35px #e5ccaa77}.card-name{font:500 18px 'Noto Serif SC';z-index:1;letter-spacing:.12em}.result-card .position{color:var(--gold);font-size:12px;margin:12px 0 8px}.result-card .orientation{font-size:12px;color:var(--muted);margin-top:8px}.reading{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;margin:25px 0}.meaning{padding:20px;line-height:1.75}.meaning h3{margin:0 0 8px;font:500 18px 'Noto Serif SC';color:var(--gold)}.meaning p{font-size:13px;color:#d2cbd9;margin:6px 0}.meaning small{color:var(--muted)}.cosmic-note{border:1px solid #c9ac7650;border-radius:12px;padding:13px 18px;color:var(--muted);font-size:12px;line-height:1.8;margin:18px auto;max-width:790px}.post-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:22px}.field{display:block;width:100%;background:#100f24;border:1px solid #88789999;border-radius:11px;color:var(--cream);padding:11px 14px;outline:none}.field:focus{border-color:var(--gold)}textarea.field{resize:vertical;min-height:83px}.field-label{font-size:12px;color:var(--gold);display:block;margin:17px 0 7px}.note-box{max-width:710px;margin:23px auto;padding:22px;text-align:left}.note-box h3{font:500 18px 'Noto Serif SC';margin:0}.note-box p{color:var(--muted);font-size:12px}.journal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}.entry{padding:22px}.entry header{display:flex;justify-content:space-between;gap:12px;color:var(--gold);font-size:12px}.entry h3{font:500 21px 'Noto Serif SC';margin:12px 0}.entry p{color:var(--muted);font-size:13px;line-height:1.65}.badge{display:inline-block;border:1px solid #c9ac7666;color:var(--gold);padding:4px 9px;border-radius:30px;font-size:11px;margin:2px}.entry-details{border-top:1px solid #88789966;margin-top:14px;padding-top:10px}.entry-details summary{color:var(--gold);cursor:pointer;font-size:13px}.entry-details p{color:#ded6e5}.empty{padding:55px;text-align:center;color:var(--muted)}.daily-wrap{max-width:780px;margin:auto;text-align:center;padding:35px}.daily-wrap .result-card{margin:24px auto}.daily-wrap .result-card .card-art{height:300px}.daily-hint{color:var(--muted);font-size:13px;line-height:1.8}.modal-backdrop{position:fixed;inset:0;background:#050411cc;z-index:10;display:grid;place-items:center;padding:20px}.modal{width:min(600px,100%);max-height:90vh;overflow:auto;padding:28px}.modal h2{font:500 24px 'Noto Serif SC';margin:0 0 8px}.modal p{color:var(--muted);font-size:13px;line-height:1.7}.modal header{display:flex;justify-content:space-between;align-items:start}.x{border:0;background:none;color:var(--gold);font-size:25px}.chat{height:310px;overflow:auto;background:#100f24;border:1px solid #88789955;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px;margin:15px 0}.bubble{max-width:90%;padding:11px 14px;border-radius:14px;line-height:1.75;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere}.bubble.user{align-self:flex-end;background:#705675;color:white}.bubble.assistant{align-self:flex-start;background:#292640;color:var(--cream)}.chat-compose{display:flex;gap:8px}.chat-compose input{flex:1}.footer{text-align:center;color:#8b839c;font-size:11px;margin:65px 0 0;line-height:1.8}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#e2c794;color:#241a2b;padding:10px 20px;border-radius:30px;z-index:30;box-shadow:var(--shadow);font-size:13px}.checkline{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:8px;margin:16px 0}.checkline input{accent-color:#c8a876}.danger{color:#f4a6ae!important}.stack{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.wide{width:100%}@media(max-width:740px){.app{padding:0 15px 50px}.top{height:auto;padding:15px 0;display:block}.brand{justify-content:center}.nav{justify-content:center;flex-wrap:wrap;margin-top:14px}.nav button{padding:7px 10px;font-size:12px}.hero{padding:42px 6px 25px}.spreads{grid-template-columns:1fr}.spread{padding:17px}.spread-icon{height:50px}.stephead span:last-child{display:none}.pick-card{width:49px;height:79px}.result-card{width:148px}.card-art{height:227px}.card-glyph{font-size:59px}.card-art:before{width:94px;height:94px;top:52px}.card-name{font-size:15px}.selected-row{gap:10px}.modal{padding:20px}}
+    .card-art.reversed{transform:rotate(180deg)}
+    .card-art.illustrated{display:block;padding:6px;background:#e8dabc}
+    .card-art.illustrated:before{display:none}
+    .card-image{display:block;width:100%;height:100%;object-fit:contain;border-radius:5px}
+    .first-question{border:1px solid #c9ac7660;background:#d9ba7912;border-radius:16px;padding:18px;margin:18px 0}
+    .first-question h3{font:500 18px 'Noto Serif SC';color:var(--gold);margin:0 0 9px}
+    .first-question p{margin:0 0 13px}
+    .first-question textarea{min-height:94px}
+    .first-question .stack{justify-content:flex-start}
+    .cut-wrap{padding:32px 24px;text-align:center}
+    .cut-stack{height:188px;width:160px;position:relative;margin:30px auto 12px}
+    .cut-stack .pick-card{position:absolute;left:50%;top:50%;width:98px;height:150px;margin:-75px 0 0 -49px;pointer-events:none}
+    .cut-stack .pick-card:nth-child(1){transform:translate(-24px,8px) rotate(-8deg)}
+    .cut-stack .pick-card:nth-child(2){transform:translate(-12px,4px) rotate(-4deg)}
+    .cut-stack .pick-card:nth-child(3){transform:translate(0,0)}
+    .cut-stack.shuffling .pick-card:nth-child(1){animation:shuffle-left 1.05s ease-in-out}
+    .cut-stack.shuffling .pick-card:nth-child(2){animation:shuffle-middle 1.05s ease-in-out}
+    .cut-stack.shuffling .pick-card:nth-child(3){animation:shuffle-right 1.05s ease-in-out}
+    .cut-stack.cutting .pick-card:nth-child(1){animation:cut-left .85s ease-in-out}
+    .cut-stack.cutting .pick-card:nth-child(3){animation:cut-right .85s ease-in-out}
+    @keyframes shuffle-left{0%,100%{transform:translate(-24px,8px) rotate(-8deg)}30%{transform:translate(-90px,-16px) rotate(-24deg)}65%{transform:translate(34px,4px) rotate(9deg)}}
+    @keyframes shuffle-middle{0%,100%{transform:translate(-12px,4px) rotate(-4deg)}32%{transform:translate(70px,-23px) rotate(18deg)}68%{transform:translate(-35px,1px) rotate(-11deg)}}
+    @keyframes shuffle-right{0%,100%{transform:translate(0,0)}30%{transform:translate(40px,12px) rotate(12deg)}65%{transform:translate(-58px,-20px) rotate(-17deg)}}
+    @keyframes cut-left{0%,100%{transform:translate(-24px,8px) rotate(-8deg)}48%{transform:translate(-78px,-20px) rotate(-17deg)}}
+    @keyframes cut-right{0%,100%{transform:translate(0,0)}48%{transform:translate(68px,22px) rotate(14deg)}}
+    .cut-controls{max-width:530px;margin:22px auto}
+    .cut-controls input{width:100%;accent-color:#e7c98d;margin:14px 0}
+    .cut-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .cut-status{color:var(--gold);font-size:13px;margin-top:17px}
+    .deck{display:grid;grid-template-columns:repeat(13,minmax(0,1fr));gap:7px;max-width:960px;width:100%;margin:25px auto}
+    .deck-slot{width:100%;min-width:0;aspect-ratio:63/100}
+    .deck-slot.empty{visibility:hidden}
+    .deck-slot .pick-card{width:100%;height:100%;font-size:clamp(17px,2.3vw,30px)}
+    .deck-slot .pick-card:hover:not(:disabled){transform:translateY(-8px) rotate(-2deg)}
+    @media(max-width:900px){.deck{grid-template-columns:repeat(10,minmax(0,1fr))}}
+    @media(max-width:640px){.deck{grid-template-columns:repeat(8,minmax(0,1fr));gap:5px}.deck-slot .pick-card{border-radius:5px}}
+    @media(max-width:440px){.deck{grid-template-columns:repeat(6,minmax(0,1fr))}}
+    @media(prefers-reduced-motion:reduce){.cut-stack.shuffling .pick-card,.cut-stack.cutting .pick-card{animation:none}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand"><span class="brand-mark">✧</span> 星谕 <span style="font-size:11px;color:var(--gold);letter-spacing:.25em">TAROT</span></div>
+      <nav class="nav" aria-label="主导航">
+        <button data-tab="reading" class="active">塔罗占卜</button><button data-tab="daily">每日运势</button><button data-tab="journal">占卜家日记</button><button class="settings" id="settingsButton" title="AI 设置" aria-label="AI 设置">⚙</button>
+      </nav>
+    </header>
+    <main>
+      <section id="readingTab">
+        <div class="hero"><div class="hero-symbol">☾ ✦ ☽</div><div class="eyebrow">A quiet moment with the universe</div><h1>倾听牌与心的回响</h1><p>放慢呼吸，选一个方向，让此刻的直觉带你遇见一张牌。</p></div>
+        <div id="setup" class="section">
+          <div class="stephead"><span class="stepnum">1</span><h2>此刻想探索的方向</h2><span>选择一个关键词</span></div>
+          <div class="panel topic-panel"><div class="topic-sub">无须说出具体的问题，在心中轻轻默念即可</div><div id="topics" class="chips"></div><button id="refreshTopics" class="text-btn">↻ 换一批关键词</button></div>
+          <div class="stephead"><span class="stepnum">2</span><h2>选择你的牌阵</h2><span>让牌阵为故事提供结构</span></div>
+          <div id="spreads" class="spreads"></div>
+          <div class="actions"><button id="startButton" class="primary">开始洗牌 · 进入仪式</button></div>
+        </div>
+        <div id="cutStage" class="section hidden"><div class="panel cut-wrap"><div class="eyebrow">The deck is sealed</div><h2 class="serif">牌已洗好，等待你切开</h2><p class="daily-hint">78 张牌和正逆位已确定。你可以切牌一次、多次，或重新洗牌。</p><div class="cut-stack" aria-hidden="true"><div class="pick-card">✧</div><div class="pick-card">✧</div><div class="pick-card">✧</div></div><div class="cut-controls"><label for="cutPosition" id="cutPositionLabel">在第 39 张牌后切开</label><input id="cutPosition" type="range" min="1" max="77" value="39"><div class="cut-status" id="cutStatus" role="status" aria-live="polite">尚未切牌</div></div><div class="cut-actions"><button id="cutButton" class="secondary">切牌一次</button><button id="reshuffleButton" class="secondary">↻ 重新洗牌</button><button id="enterDrawButton" class="primary">进入抽牌</button></div><button id="backFromCut" class="text-btn">返回选择</button></div></div>
+        <div id="drawStage" class="section hidden"><div class="panel draw-panel"><div class="eyebrow">The cards are waiting</div><h2>静心，亲手选出你的牌</h2><p>78 张牌都已展开。抽中的位置会空出，其他牌保持原位；牌面与朝向在洗牌时已经确定。</p><div id="drawProgress" class="progress" role="status" aria-live="polite"></div><div id="deck" class="deck"></div><div id="pickedPreview" class="selected-row"></div><button id="drawReshuffle" class="text-btn">↻ 重新洗牌</button><button id="restartDraw" class="text-btn">重新开始</button></div></div>
+        <div id="resultStage" class="section hidden"><div class="center"><div class="eyebrow">Your constellation of cards</div><h2 class="serif" id="resultTitle">你的牌阵</h2><p style="color:var(--muted);font-size:13px">每张牌是一面镜子，映照可能的视角，而非注定的答案。</p></div><div id="resultCards" class="selected-row"></div><div id="meaningList" class="reading"></div><div id="cosmicNote" class="cosmic-note"></div><div class="post-actions"><button id="aiButton" class="primary">✧ AI 占卜与追问</button><button id="newReading" class="secondary">开始新的占卜</button></div><div class="panel note-box"><h3>写下你当时所想</h3><p>占卜已结束，现在可以为这次记录补充具体事情和标签。这些内容仅保存在本机。</p><label class="field-label" for="questionNote">心中所想</label><textarea id="questionNote" class="field" maxlength="500" placeholder="例如：我正在考虑是否接受一个新的工作机会……"></textarea><label class="field-label" for="tagNote">标签</label><input id="tagNote" class="field" maxlength="100" placeholder="用逗号分隔，例如：转职, 十月"><div class="stack"><button id="saveNote" class="secondary">保存到日记</button></div></div></div>
+      </section>
+      <section id="dailyTab" class="hidden"><div class="hero"><div class="hero-symbol">☼</div><div class="eyebrow">One card for today</div><h1>今日的一束微光</h1><p>每天一张牌，留给自己一句温柔的提醒。</p></div><div id="dailyContent" class="panel daily-wrap"></div></section>
+      <section id="journalTab" class="hidden"><div class="hero"><div class="hero-symbol">✧</div><div class="eyebrow">The story continues</div><h1>占卜家日记</h1><p>回望过往的提问，也看见自己如何一路走来。</p></div><div class="section"><div class="stack" style="margin-bottom:22px"><button id="exportButton" class="secondary">导出备份</button><button id="importButton" class="secondary">导入备份</button><input id="importFile" type="file" accept="application/json,.json" class="hidden"></div><div id="journalList" class="journal-grid"></div></div></section>
+    </main>
+    <footer class="footer">星谕 · TAROT JOURNAL<br>牌面插画：Pamela Colman Smith，公有领域素材来自 <a href="https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>。<br>用于自我探索与记录，不代替医疗、法律、财务等专业建议。</footer>
+  </div>
+  <div id="modalRoot"></div><div id="toast" class="toast hidden" role="status"></div>
+  <script>
+  (() => {
+    'use strict';
+    const KEY='staroracle.v1';
+    const TOPIC_BATCHES=[['事业','情感','学业','近期运势','人际关系','个人成长'],['工作选择','家庭','友情','创造力','内在平衡','新机会'],['目标进展','沟通','自我照顾','变化','灵感','未来方向']];
+    const SPREADS=[{id:'one',name:'一叶知心',desc:'一张牌，聚焦当下最需要留意的讯息。',positions:['当下的提示']},{id:'three',name:'时光之线',desc:'三张牌，观察事情的来处、现在与可能方向。',positions:['过去的线索','当下的状态','未来的可能']},{id:'five',name:'星芒之路',desc:'五张牌，从多个角度梳理心中的问题。',positions:['现状','阻力','可用资源','值得尝试的行动','潜在走向']}];
+    const MAJOR_NAMES=['愚者','魔术师','女祭司','皇后','皇帝','教皇','恋人','战车','力量','隐士','命运之轮','正义','倒吊人','死神','节制','恶魔','高塔','星星','月亮','太阳','审判','世界'];
+    const MAJOR_WORDS=['开始、信任、探索','意志、资源、创造','直觉、静观、潜意识','滋养、丰盛、关怀','秩序、责任、边界','传统、学习、信念','关系、价值、选择','前行、自律、方向','温柔、勇气、耐心','独处、寻找、智慧','转机、周期、变化','平衡、诚实、因果','暂停、换个视角、放下','结束、转化、新生','调和、节奏、疗愈','束缚、欲望、觉察','冲击、破旧、重建','希望、信任、灵感','朦胧、情绪、直觉','清晰、活力、喜悦','回望、召唤、觉醒','完成、整合、新旅程'];
+    const SUITS=[{name:'权杖',glyph:'♧',element:'火',theme:'行动、热情与创造力'},{name:'圣杯',glyph:'♥',element:'水',theme:'情绪、关系与感受'},{name:'宝剑',glyph:'♠',element:'风',theme:'思考、沟通与挑战'},{name:'星币',glyph:'◆',element:'土',theme:'资源、生活与实践'}];
+    const RANKS=['王牌','二','三','四','五','六','七','八','九','十','侍从','骑士','皇后','国王'];
+    const RANK_WORDS=['萌芽与机会','选择与平衡','扩展与协作','稳定与基础','变化与摩擦','调整与成长','考验与坚持','投入与进展','积累与回望','阶段与完成','好奇与消息','行动与追寻','成熟与照料','掌握与担当'];
+    const CARDS=[...MAJOR_NAMES.map((name,i)=>({id:'m'+i,name,arcana:'大阿尔卡那',suit:'major',glyph:['✧','✦','☽','❀','♜','✥','♡','⚝','♌','☷','✺','⚖','⧖','☯','☸','♢','⚡','✶','☾','☼','✷','◎'][i],words:MAJOR_WORDS[i],base:`${name}象征${MAJOR_WORDS[i].replaceAll('、','、')}。它邀请你留意此刻的内在状态与选择。` })),...SUITS.flatMap(s=>RANKS.map((rank,i)=>({id:s.name+i,name:s.name+rank,arcana:'小阿尔卡那',suit:s.name,glyph:s.glyph,words:`${RANK_WORDS[i]}、${s.theme}`,base:`${s.name}关联${s.element}元素，映照${s.theme}。${rank}提示${RANK_WORDS[i]}。`})) )];
+    const defaultData=()=>({entries:[],daily:null,config:{endpoint:'https://api.openai.com/v1/chat/completions',model:'',rememberKey:false}});
+    function load(){try{const x=JSON.parse(localStorage.getItem(KEY));return x&&Array.isArray(x.entries)?{...defaultData(),...x,config:{...defaultData().config,...x.config}}:defaultData()}catch{return defaultData()}}
+    let data=load(), apiKey='', current=null, selectedTopic='', selectedSpread=SPREADS[1], batch=0, drawPool=[], drawSlots=[], drawCards=[], cutCount=0, deckBusy=false, drawBusy=false, activeChatView=null;
+    const FIXED_AI=window.STARORACLE_FIXED_AI||null;
+    const pendingAI=new Set();
+    function persist(){try{localStorage.setItem(KEY,JSON.stringify(data));return true}catch{toast('保存失败：请检查浏览器存储设置或空间。');return false}}
+    const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
+    function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text!=null)n.textContent=text;return n}
+    function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.remove('hidden');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.add('hidden'),3400)}
+    function todayKey(){const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+    function rand(){const x=new Uint32Array(1);crypto.getRandomValues(x);return x[0]/4294967296}
+    function pickWeighted(items,weightFn){let total=0;const w=items.map(x=>{const v=weightFn(x);total+=v;return v});let target=rand()*total;for(let i=0;i<items.length;i++){target-=w[i];if(target<0)return items.splice(i,1)[0]}return items.pop()}
+    function solarTerm(d){const terms=['小寒','大寒','立春','雨水','惊蛰','春分','清明','谷雨','立夏','小满','芒种','夏至','小暑','大暑','立秋','处暑','白露','秋分','寒露','霜降','立冬','小雪','大雪','冬至'];const days=[6,20,4,19,6,21,5,20,6,21,6,21,7,23,7,23,7,23,8,23,7,22,7,22];const i=d.getMonth()*2+(d.getDate()>=days[d.getMonth()*2+1]?1:d.getDate()>=days[d.getMonth()*2]?0:-1);return terms[(i+24)%24]}
+    function moonPhase(d){const age=((d.getTime()-Date.UTC(2000,0,6,18,14))/(86400000*29.530588853)%1+1)%1;return {name:['新月','渐盈月','上弦月','盈凸月','满月','亏凸月','下弦月','残月'][Math.floor(age*8)],index:Math.floor(age*8)}}
+    function cosmic(d=new Date()){return {dateNum:d.getDate(),weekday:d.getDay(),term:solarTerm(d),phase:moonPhase(d)}}
+    function hash(str){let h=2166136261;for(const c of str){h=Math.imul(h^c.charCodeAt(0),16777619)}return h>>>0}
+    function cosmicWeight(card,c){const token=`${todayKey()}|${c.weekday}|${c.term}|${c.phase.index}|${c.dateNum}|${card.id}`;return 0.96+(hash(token)%801)/10000} // 每张牌仅 ±4% 的偏置
+    function chooseCards(count){const pool=CARDS.slice(),c=cosmic(),out=[];for(let i=0;i<count;i++)out.push({card:pickWeighted(pool,x=>cosmicWeight(x,c)),reversed:rand()<.5});return out}
+    function renderTopics(){const box=$('#topics');box.replaceChildren();for(const topic of TOPIC_BATCHES[batch]){const b=el('button','chip'+(selectedTopic===topic?' selected':''),topic);b.type='button';b.onclick=()=>{selectedTopic=topic;renderTopics()};box.append(b)}}
+    function renderSpreads(){const box=$('#spreads');box.replaceChildren();for(const s of SPREADS){const b=el('button','panel spread'+(selectedSpread.id===s.id?' selected':''));b.type='button';b.innerHTML=`<div class="spread-icon">${s.positions.map(()=>'<span class="tinycard">✧</span>').join('')}</div>`;b.append(el('h3','',s.name),el('p','',s.desc),el('div','labels',s.positions.join(' · ')));b.onclick=()=>{selectedSpread=s;renderSpreads()};box.append(b)}}
+    function tab(name){for(const n of ['reading','daily','journal']){$('#'+n+'Tab').classList.toggle('hidden',n!==name);$(`[data-tab="${n}"]`).classList.toggle('active',n===name)}if(name==='daily')renderDaily();if(name==='journal')renderJournal();window.scrollTo({top:0,behavior:'smooth'})}
+    function stage(name){$('#setup').classList.toggle('hidden',name!=='setup');$('#cutStage').classList.toggle('hidden',name!=='cut');$('#drawStage').classList.toggle('hidden',name!=='draw');$('#resultStage').classList.toggle('hidden',name!=='result')}
+    function setCutControls(disabled){for(const id of ['#cutPosition','#cutButton','#reshuffleButton','#enterDrawButton','#backFromCut'])$(id).disabled=disabled}
+    function reshuffle(){
+      if(deckBusy)return;
+      deckBusy=true;
+      drawPool=chooseCards(CARDS.length);drawSlots=[];drawCards=[];cutCount=0;drawBusy=false;
+      $('#cutPosition').value='39';stage('cut');setCutControls(true);
+      const stack=$('.cut-stack');stack.classList.remove('cutting','shuffling');void stack.offsetWidth;stack.classList.add('shuffling');
+      $('#cutStatus').textContent='正在洗牌 · 78 张牌与朝向即将确定…';
+      setTimeout(()=>{stack.classList.remove('shuffling');deckBusy=false;setCutControls(false);renderCut()},1050);
+    }
+    function start(){if(!selectedTopic){toast('请先选择一个探索方向。');return}reshuffle();window.scrollTo({top:180,behavior:'smooth'})}
+    function renderCut(){const index=Number($('#cutPosition').value);$('#cutPositionLabel').textContent=`在第 ${index} 张牌后切开`;$('#cutStatus').textContent=cutCount?`已切牌 ${cutCount} 次 · 牌序已经改变`:'尚未切牌 · 当前牌序已封存'}
+    function cutDeck(){
+      if(deckBusy)return;
+      const index=Number($('#cutPosition').value);if(index<1||index>=drawPool.length)return;
+      deckBusy=true;setCutControls(true);$('#cutStatus').textContent=`正在第 ${index} 张牌后切开…`;
+      const stack=$('.cut-stack');stack.classList.remove('cutting','shuffling');void stack.offsetWidth;stack.classList.add('cutting');
+      setTimeout(()=>{drawPool=drawPool.slice(index).concat(drawPool.slice(0,index));cutCount++;stack.classList.remove('cutting');deckBusy=false;setCutControls(false);renderCut()},850);
+    }
+    function beginDraw(){if(deckBusy)return;drawSlots=drawPool.slice();drawCards=[];stage('draw');renderDeck();window.scrollTo({top:180,behavior:'smooth'})}
+    function renderDeck(){const deck=$('#deck');deck.replaceChildren();$('#drawProgress').textContent=`已抽取 ${drawCards.length} / ${selectedSpread.positions.length} 张 · 下一张：${selectedSpread.positions[drawCards.length]||'完成'} · 牌堆剩余 ${drawSlots.filter(Boolean).length} / 78 张`;drawSlots.forEach((item,i)=>{const slot=el('div','deck-slot'+(item?'':' empty'));if(item){const b=el('button','pick-card','✧');b.type='button';b.setAttribute('aria-label',`抽取第 ${i+1} 个位置的牌`);b.onclick=()=>drawOne(i);slot.append(b)}else slot.setAttribute('aria-hidden','true');deck.append(slot)});$('#drawReshuffle').classList.toggle('hidden',drawCards.length>0);const preview=$('#pickedPreview');preview.replaceChildren();drawCards.forEach((item,i)=>preview.append(makeResultCard(item,selectedSpread.positions[i])))}
+    function drawOne(index){if(drawBusy||!drawSlots[index])return;drawBusy=true;const item=drawSlots[index];drawSlots[index]=null;drawCards.push(item);renderDeck();setTimeout(()=>{drawBusy=false;if(drawCards.length===selectedSpread.positions.length)finishReading()},380)}
+    function cardImagePath(card){if(/^m\d+$/.test(card.id))return `assets/cards/m${String(Number(card.id.slice(1))).padStart(2,'0')}.jpg`;const match=/^(权杖|圣杯|宝剑|星币)(\d+)$/.exec(card.id);if(!match)return '';const suit={权杖:'wands',圣杯:'cups',宝剑:'swords',星币:'pents'}[match[1]];return `assets/cards/${suit}${String(Number(match[2])).padStart(2,'0')}.jpg`}
+    function symbolArt(art,card){art.append(el('div','card-top',card.arcana==='大阿尔卡那'?'MAJOR ARCANA':'MINOR ARCANA'),el('div','card-glyph',card.glyph),el('div','card-name',card.name))}
+    function makeResultCard(item,position){const wrap=el('div','result-card');wrap.append(el('div','position',position));const art=el('div','card-art'+(item.reversed?' reversed':''));const path=cardImagePath(item.card);if(path){art.classList.add('illustrated');const img=el('img','card-image');img.src=path;img.alt=`${item.card.name}牌面`;img.loading='lazy';img.onerror=()=>{img.remove();art.classList.remove('illustrated');symbolArt(art,item.card)};art.append(img)}else symbolArt(art,item.card);wrap.append(art,el('div','orientation',item.reversed?'逆位 · Reversed':'正位 · Upright'));return wrap}
+    function meaningText(item){return item.reversed?'逆位可提示：相关能量正在内化、受阻，或需要放慢脚步重新理解。它并非单纯的坏兆头。':'正位可提示：这种能量较容易被看见或主动运用。留意它如何与你的处境呼应。'}
+    function renderResult(){stage('result');$('#resultTitle').textContent=`${selectedTopic} · ${selectedSpread.name}`;const cards=$('#resultCards'),meanings=$('#meaningList');cards.replaceChildren();meanings.replaceChildren();current.cards.forEach((item,i)=>{cards.append(makeResultCard(item,selectedSpread.positions[i]));const m=el('div','panel meaning');m.append(el('h3','',`${selectedSpread.positions[i]} · ${item.card.name}`),el('small','',`${item.card.arcana} / ${item.reversed?'逆位':'正位'}`),el('p','',item.card.base),el('p','',meaningText(item)));meanings.append(m)});const c=current.cosmic;$('#cosmicNote').textContent=`今日的轻微洗牌偏置：${c.dateNum} 日、星期${'日一二三四五六'[c.weekday]}、${c.term}、${c.phase.name}。单张牌的抽取权重仅在 0.96–1.04 之间变化；结果仍以随机抽取为主。`;$('#questionNote').value=current.note||'';$('#tagNote').value=(current.tags||[]).join(', ');window.scrollTo({top:130,behavior:'smooth'})}
+    function finishReading(){current={id:crypto.randomUUID?crypto.randomUUID():`${Date.now()}-${Math.floor(rand()*1e9)}`,time:new Date().toISOString(),date:todayKey(),topic:selectedTopic,spread:selectedSpread.id,cards:drawCards.map(x=>({card:x.card,reversed:x.reversed})),cosmic:cosmic(),note:'',tags:[],reflection:'',chat:[],isDaily:false};data.entries.unshift(current);persist();renderResult()}
+    function saveNote(){if(!current)return;current.note=$('#questionNote').value.trim();current.tags=$('#tagNote').value.split(/[,，]/).map(x=>x.trim()).filter(Boolean).slice(0,12);persist();toast('已保存到占卜家日记。')}
+    function dailyMessage(item){const tone=item.reversed?'今天适合给自己留一点余地。即使进展放慢，也可以温柔地调整节奏。':'今天可以带着一点信任向前。小小的主动尝试，也值得肯定。';return `${item.card.name}提醒你留意${item.card.words}。${tone}`}
+    function renderDaily(){const box=$('#dailyContent');box.replaceChildren();const key=todayKey();if(data.daily?.date===key){const item=data.daily.cards[0];box.append(el('div','eyebrow',`${key} · 今日之牌`),makeResultCard(item,'今日的提示'),el('p','daily-hint',dailyMessage(item)),el('p','daily-hint','今天的牌已保存。明天将开启新的抽取。'));return}box.append(el('div','eyebrow','A new day, a new perspective'),el('h2','serif','在心中为今天许一个安静的愿望'),el('p','daily-hint','今日运势每天只能抽取一次，结果会在今天持续显示。'));const b=el('button','primary','抽取今日之牌');b.onclick=()=>{const item=chooseCards(1)[0];data.daily={id:`daily-${key}`,date:key,time:new Date().toISOString(),topic:'每日运势',spread:'one',cards:[item],cosmic:cosmic(),note:'',tags:['每日运势'],reflection:'',isDaily:true};data.entries.unshift(data.daily);persist();renderDaily()};box.append(b)}
+    function renderJournal(){
+      const list=$('#journalList');list.replaceChildren();
+      if(!data.entries.length){list.append(el('div','panel empty','这里还没有记录。完成一次占卜后，它会出现在这里。'));return}
+      for(const item of data.entries){
+        const s=SPREADS.find(x=>x.id===item.spread)||SPREADS[0];
+        const e=el('article','panel entry');const hd=el('header');
+        hd.append(el('span','',item.date),el('span','',item.isDaily?'☼ 每日运势':s.name));
+        e.append(hd,el('h3','',item.topic),el('p','',item.cards.map((x,i)=>`${s.positions[i]||'提示'}：${x.card.name}${x.reversed?'（逆位）':'（正位）'}`).join(' · ')));
+        if(item.note)e.append(el('p','',`所想：${item.note}`));
+        const tags=el('div');(item.tags||[]).forEach(t=>tags.append(el('span','badge',t)));e.append(tags);
+        const aiCount=Array.isArray(item.chat)?item.chat.filter(x=>x.role==='assistant').length:0;
+        const ai=el('button','secondary',aiCount?`查看 AI 解读 · ${aiCount} 条`:'AI 解读');
+        ai.style.marginTop='14px';ai.onclick=()=>aiModal(item);e.append(ai);
+        const details=el('details','entry-details');details.append(el('summary','',item.reflection?'查看还愿记录':'还愿 · 回顾后来发生的事'));
+        if(item.reflection)details.append(el('p','',item.reflection));
+        const ta=el('textarea','field');ta.placeholder='后来发生了什么？这次占卜对你的心态产生了什么积极影响？';ta.maxLength=1000;ta.value=item.reflection||'';ta.style.marginTop='12px';details.append(ta);
+        const save=el('button','secondary','保存还愿');save.style.marginTop='10px';save.onclick=()=>{item.reflection=ta.value.trim();persist();toast('还愿记录已保存。');renderJournal()};details.append(save);
+        e.append(details);list.append(e)
+      }
+    }
+    function modal(content){const root=$('#modalRoot');activeChatView=null;root.replaceChildren();const bg=el('div','modal-backdrop');const box=el('div','panel modal');const hd=el('header');hd.append(el('h2','',content.title));const dismiss=()=>{activeChatView=null;root.replaceChildren()};const close=el('button','x','×');close.setAttribute('aria-label','关闭');close.onclick=dismiss;hd.append(close);box.append(hd,content.body);bg.append(box);bg.onclick=e=>{if(e.target===bg)dismiss()};root.append(bg);return box}
+    function labeledInput(label,value,placeholder,type='text'){const group=el('div');const lab=el('label','field-label',label);const input=el('input','field');input.type=type;input.value=value||'';input.placeholder=placeholder;group.append(lab,input);return {group,input}}
+    function settings(){const body=el('div');body.append(el('p','', '填写支持 OpenAI 兼容聊天接口的服务地址、模型名称与您自己的 API Key。请求由本机直接发出，服务商须允许浏览器跨域访问。'));const endpoint=labeledInput('聊天接口完整 URL',data.config.endpoint,'https://.../v1/chat/completions');const model=labeledInput('模型名称',data.config.model,'例如：gpt-4.1-mini');const key=labeledInput('API Key',apiKey,'输入您自己的密钥','password');body.append(endpoint.group,model.group,key.group);const check=el('label','checkline');const checkbox=el('input');checkbox.type='checkbox';checkbox.checked=!!data.config.rememberKey;check.append(checkbox,el('span','', '记住密钥（保存在此浏览器本地，其他能使用本机的人可能读取）'));body.append(check);body.append(el('p','', '默认只在当前页面会话中保留密钥。离开页面后需重新输入。请勿在共享设备上勾选“记住密钥”。'));const save=el('button','primary wide','保存设置');save.style.marginTop='12px';save.onclick=()=>{const ep=endpoint.input.value.trim();if(!/^https:\/\//i.test(ep)&&!/^http:\/\/localhost(?::\d+)?\//i.test(ep)){toast('接口地址需使用 HTTPS，或本机 localhost。');return}data.config.endpoint=ep;data.config.model=model.input.value.trim();apiKey=key.input.value.trim();data.config.rememberKey=checkbox.checked;if(checkbox.checked)data.config.savedKey=apiKey;else delete data.config.savedKey;persist();$('#modalRoot').replaceChildren();toast('AI 设置已保存。')};body.append(save);modal({title:'AI 解读设置',body})}
+    apiKey=data.config.rememberKey?data.config.savedKey||'':'';
+    const SYSTEM_PROMPT='你是一位温和、专业且熟悉78张韦特系塔罗牌的中文塔罗占卜师。把牌当作自我探索与反思工具，不声称能确定预测未来。解释每张牌的基础意象、正逆位、牌阵位置及相互关系，结合用户选择的大方向。语气富有诗意但清晰具体，避免空泛神秘断言。可以提出可执行、尊重用户自主性的建议。每日运势以积极、诚实、不过度保证的方式表达。不要对医疗、法律、财务风险做决定性建议；必要时鼓励咨询专业人士。占卜前没有用户的具体问题，不要自行编造。';
+    function contextForReading(reading){const s=SPREADS.find(x=>x.id===reading.spread)||SPREADS[0];return `占卜方向：${reading.topic}\n牌阵：${s.name}\n牌位与牌：\n${reading.cards.map((x,i)=>`${s.positions[i]}：${x.card.name} ${x.reversed?'逆位':'正位'}；基础意象：${x.card.base}`).join('\n')}\n用户事后补充的具体问题：${reading.note||'未填写'}`}
+    function addBubble(box,role,message){const b=el('div','bubble '+role,message);box.append(b);box.scrollTop=box.scrollHeight;return b}
+    function renderChatView(view){
+      view.box.replaceChildren();
+      for(const message of view.reading.chat||[]){if(['user','assistant'].includes(message.role)&&typeof message.content==='string')addBubble(view.box,message.role,message.content)}
+      const pending=pendingAI.has(view.reading.id);
+      if(pending)addBubble(view.box,'assistant','正在倾听牌的回响…');
+      if(view.error)addBubble(view.box,'assistant',view.error);
+      const hasMessages=!!(view.reading.chat||[]).length;
+      view.intro.classList.toggle('hidden',hasMessages||pending);
+      view.box.classList.toggle('hidden',!hasMessages&&!pending&&!view.error);
+      view.compose.classList.toggle('hidden',!hasMessages);
+      view.send.disabled=pending;
+      view.box.scrollTop=view.box.scrollHeight;
+    }
+    async function askAI(reading,question,view){
+      if(pendingAI.has(reading.id))return;
+      const config=FIXED_AI||{endpoint:data.config.endpoint,model:data.config.model,apiKey};
+      if(!config.endpoint||!config.model||!config.apiKey){
+        if(FIXED_AI)toast('测试版 AI 尚未配置，请联系应用提供者。');
+        else{toast('请先在设置中填写模型名称与 API Key。');settings()}
+        return;
+      }
+      const conversation=Array.isArray(reading.chat)?reading.chat:(reading.chat=[]);
+      const userMessage={role:'user',content:question||'请对这次抽牌做一次完整而具体的解读。'};
+      conversation.push(userMessage);persist();pendingAI.add(reading.id);view.input.value='';view.error='';renderChatView(view);
+      try{
+        const response=await fetch(config.endpoint,{method:'POST',headers:{'Content-Type':'application/json','Authorization':`Bearer ${config.apiKey}`},body:JSON.stringify({model:config.model,messages:[{role:'system',content:SYSTEM_PROMPT},{role:'system',content:contextForReading(reading)},...conversation],temperature:.75})});
+        if(!response.ok){const err=await response.text();throw new Error(`接口返回 ${response.status}：${err.slice(0,220)}`)}
+        const json=await response.json();const answer=json.choices?.[0]?.message?.content;
+        if(typeof answer!=='string'||!answer.trim())throw new Error('接口未返回可用的聊天内容。');
+        conversation.push({role:'assistant',content:answer});persist();
+      }catch(err){
+        const index=conversation.indexOf(userMessage);if(index>=0)conversation.splice(index,1);persist();
+        if(activeChatView?.reading===reading)activeChatView.error=`请求失败：${err.message}。请检查接口地址、模型、密钥及服务商的跨域支持。`;
+      }finally{
+        pendingAI.delete(reading.id);
+        if(activeChatView?.reading===reading)renderChatView(activeChatView);
+        if(!$('#journalTab').classList.contains('hidden'))renderJournal();
+      }
+    }
+    function aiModal(reading){
+      if(!reading)return;
+      const spread=SPREADS.find(x=>x.id===reading.spread)||SPREADS[0];
+      const body=el('div');body.append(el('p','',`当前记录：${reading.topic} · ${spread.name}。聊天记录自动保存在本机日记中；提问会发送给当前使用的模型服务商。`));
+      const intro=el('div','first-question');intro.append(el('h3','','这次你想问什么？'),el('p','','抽牌已经结束，可以说出具体问题；也可以只根据牌面使用默认提问。'));
+      const question=el('textarea','field');question.maxLength=600;question.placeholder='例如：我正考虑换工作，眼下最该留意什么？';intro.append(question);
+      const firstActions=el('div','stack');const customButton=el('button','primary','解读我的问题');customButton.disabled=true;
+      const defaultButton=el('button','secondary','使用默认提问');firstActions.append(customButton,defaultButton);intro.append(firstActions);
+      const box=el('div','chat');const compose=el('div','chat-compose');const input=el('input','field');input.placeholder='继续追问，例如：我可以怎样行动？';const send=el('button','secondary','发送');
+      const view={reading,intro,question,customButton,defaultButton,box,compose,input,send,error:''};
+      question.oninput=()=>{customButton.disabled=!question.value.trim()};
+      customButton.onclick=()=>{if(question.value.trim())askAI(reading,question.value.trim(),view)};
+      defaultButton.onclick=()=>askAI(reading,'',view);
+      send.onclick=()=>{if(input.value.trim())askAI(reading,input.value.trim(),view)};
+      input.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();send.click()}};
+      compose.append(input,send);body.append(intro,box,compose);modal({title:'✧ AI 占卜与追问',body});activeChatView=view;renderChatView(view);
+    }
+    function exportData(){const blob=new Blob([JSON.stringify({format:'staroracle.v1',exportedAt:new Date().toISOString(),entries:data.entries,daily:data.daily},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=el('a');a.href=url;a.download=`星谕备份-${todayKey()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+    async function importData(file){try{const x=JSON.parse(await file.text());if(x.format!=='staroracle.v1'||!Array.isArray(x.entries))throw Error('文件不是星谕备份。');const known=new Set(data.entries.map(e=>e.id));for(const entry of x.entries){if(entry&&entry.id&&Array.isArray(entry.cards)&&!known.has(entry.id)){data.entries.push(entry);known.add(entry.id)}}data.entries.sort((a,b)=>String(b.time).localeCompare(String(a.time)));if(x.daily?.date===todayKey()&&!data.daily)data.daily=x.daily;persist();renderJournal();toast('备份已导入。')}catch(err){toast(`导入失败：${err.message}`)}}
+    $$('[data-tab]').forEach(b=>b.onclick=()=>tab(b.dataset.tab));$('#settingsButton').onclick=settings;if(FIXED_AI)$('#settingsButton').classList.add('hidden');$('#refreshTopics').onclick=()=>{batch=(batch+1)%TOPIC_BATCHES.length;selectedTopic='';renderTopics()};$('#startButton').onclick=start;$('#cutPosition').oninput=renderCut;$('#cutButton').onclick=cutDeck;$('#reshuffleButton').onclick=reshuffle;$('#enterDrawButton').onclick=beginDraw;$('#backFromCut').onclick=()=>stage('setup');$('#drawReshuffle').onclick=reshuffle;$('#restartDraw').onclick=()=>stage('setup');$('#newReading').onclick=()=>{current=null;selectedTopic='';renderTopics();stage('setup');window.scrollTo({top:0,behavior:'smooth'})};$('#saveNote').onclick=saveNote;$('#aiButton').onclick=()=>aiModal(current);$('#exportButton').onclick=exportData;$('#importButton').onclick=()=>$('#importFile').click();$('#importFile').onchange=e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=''};
+    renderTopics();renderSpreads();stage('setup');
+  })();
+  </script>
+</body>
+</html>
