@@ -77,6 +77,14 @@
     <footer class="footer">星谕 · TAROT JOURNAL<br>牌面插画：Pamela Colman Smith，公有领域素材来自 <a href="https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>。<br>用于自我探索与记录，不代替医疗、法律、财务等专业建议。</footer>
   </div>
   <div id="modalRoot"></div><div id="toast" class="toast hidden" role="status"></div>
+  <!-- 测试版固定 AI 配置：只修改下面三个值。此文件会向持有者暴露 API Key。 -->
+  <script>
+    window.STARORACLE_FIXED_AI = {
+      endpoint: 'https://api.deepseek.com/chat/completions',
+      model: 'deepseek-flash',
+      apiKey: 'sk-8465743d7bb8402498cb1c4b39c4557b'
+    };
+  </script>
   <script>
   (() => {
     'use strict';
@@ -233,3 +241,4 @@
   </script>
 </body>
 </html>
+
