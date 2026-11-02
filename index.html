@@ -77,14 +77,6 @@
     <footer class="footer">星谕 · TAROT JOURNAL<br>牌面插画：Pamela Colman Smith，公有领域素材来自 <a href="https://commons.wikimedia.org/wiki/Category:Rider-Waite-Smith_tarot_deck_(TaionWC)" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>。<br>用于自我探索与记录，不代替医疗、法律、财务等专业建议。</footer>
   </div>
   <div id="modalRoot"></div><div id="toast" class="toast hidden" role="status"></div>
-  <!-- 测试版固定 AI 配置：只修改下面三个值。此文件会向持有者暴露 API Key。 -->
-  <script>
-    window.STARORACLE_FIXED_AI = {
-      endpoint: 'https://api.deepseek.com/chat/completions',
-      model: 'deepseek-flash',
-      apiKey: 'sk-8465743d7bb8402498cb1c4b39c4557b'
-    };
-  </script>
   <script>
   (() => {
     'use strict';
@@ -100,7 +92,6 @@
     const defaultData=()=>({entries:[],daily:null,config:{endpoint:'https://api.openai.com/v1/chat/completions',model:'',rememberKey:false}});
     function load(){try{const x=JSON.parse(localStorage.getItem(KEY));return x&&Array.isArray(x.entries)?{...defaultData(),...x,config:{...defaultData().config,...x.config}}:defaultData()}catch{return defaultData()}}
     let data=load(), apiKey='', current=null, selectedTopic='', selectedSpread=SPREADS[1], batch=0, drawPool=[], drawSlots=[], drawCards=[], cutCount=0, deckBusy=false, drawBusy=false, activeChatView=null;
-    const FIXED_AI=window.STARORACLE_FIXED_AI||null;
     const pendingAI=new Set();
     function persist(){try{localStorage.setItem(KEY,JSON.stringify(data));return true}catch{toast('保存失败：请检查浏览器存储设置或空间。');return false}}
     const $=s=>document.querySelector(s);const $$=s=>[...document.querySelectorAll(s)];
@@ -192,10 +183,9 @@
     }
     async function askAI(reading,question,view){
       if(pendingAI.has(reading.id))return;
-      const config=FIXED_AI||{endpoint:data.config.endpoint,model:data.config.model,apiKey};
+      const config={endpoint:data.config.endpoint,model:data.config.model,apiKey};
       if(!config.endpoint||!config.model||!config.apiKey){
-        if(FIXED_AI)toast('测试版 AI 尚未配置，请联系应用提供者。');
-        else{toast('请先在设置中填写模型名称与 API Key。');settings()}
+        toast('请先在设置中填写模型名称与 API Key。');settings();
         return;
       }
       const conversation=Array.isArray(reading.chat)?reading.chat:(reading.chat=[]);
@@ -235,10 +225,9 @@
     }
     function exportData(){const blob=new Blob([JSON.stringify({format:'staroracle.v1',exportedAt:new Date().toISOString(),entries:data.entries,daily:data.daily},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=el('a');a.href=url;a.download=`星谕备份-${todayKey()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
     async function importData(file){try{const x=JSON.parse(await file.text());if(x.format!=='staroracle.v1'||!Array.isArray(x.entries))throw Error('文件不是星谕备份。');const known=new Set(data.entries.map(e=>e.id));for(const entry of x.entries){if(entry&&entry.id&&Array.isArray(entry.cards)&&!known.has(entry.id)){data.entries.push(entry);known.add(entry.id)}}data.entries.sort((a,b)=>String(b.time).localeCompare(String(a.time)));if(x.daily?.date===todayKey()&&!data.daily)data.daily=x.daily;persist();renderJournal();toast('备份已导入。')}catch(err){toast(`导入失败：${err.message}`)}}
-    $$('[data-tab]').forEach(b=>b.onclick=()=>tab(b.dataset.tab));$('#settingsButton').onclick=settings;if(FIXED_AI)$('#settingsButton').classList.add('hidden');$('#refreshTopics').onclick=()=>{batch=(batch+1)%TOPIC_BATCHES.length;selectedTopic='';renderTopics()};$('#startButton').onclick=start;$('#cutPosition').oninput=renderCut;$('#cutButton').onclick=cutDeck;$('#reshuffleButton').onclick=reshuffle;$('#enterDrawButton').onclick=beginDraw;$('#backFromCut').onclick=()=>stage('setup');$('#drawReshuffle').onclick=reshuffle;$('#restartDraw').onclick=()=>stage('setup');$('#newReading').onclick=()=>{current=null;selectedTopic='';renderTopics();stage('setup');window.scrollTo({top:0,behavior:'smooth'})};$('#saveNote').onclick=saveNote;$('#aiButton').onclick=()=>aiModal(current);$('#exportButton').onclick=exportData;$('#importButton').onclick=()=>$('#importFile').click();$('#importFile').onchange=e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=''};
+    $$('[data-tab]').forEach(b=>b.onclick=()=>tab(b.dataset.tab));$('#settingsButton').onclick=settings;$('#refreshTopics').onclick=()=>{batch=(batch+1)%TOPIC_BATCHES.length;selectedTopic='';renderTopics()};$('#startButton').onclick=start;$('#cutPosition').oninput=renderCut;$('#cutButton').onclick=cutDeck;$('#reshuffleButton').onclick=reshuffle;$('#enterDrawButton').onclick=beginDraw;$('#backFromCut').onclick=()=>stage('setup');$('#drawReshuffle').onclick=reshuffle;$('#restartDraw').onclick=()=>stage('setup');$('#newReading').onclick=()=>{current=null;selectedTopic='';renderTopics();stage('setup');window.scrollTo({top:0,behavior:'smooth'})};$('#saveNote').onclick=saveNote;$('#aiButton').onclick=()=>aiModal(current);$('#exportButton').onclick=exportData;$('#importButton').onclick=()=>$('#importFile').click();$('#importFile').onchange=e=>{if(e.target.files[0])importData(e.target.files[0]);e.target.value=''};
     renderTopics();renderSpreads();stage('setup');
   })();
   </script>
 </body>
 </html>
-
